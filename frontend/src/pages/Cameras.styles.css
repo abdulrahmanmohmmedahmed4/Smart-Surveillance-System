@@ -1,0 +1,204 @@
+.cameras__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.cameras__loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--color-text-soft);
+}
+
+.cameras__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(148, 163, 184, 0.4);
+  border-top-color: rgba(56, 189, 248, 0.95);
+  animation: cameras-spin 0.9s linear infinite;
+}
+
+@keyframes cameras-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cameras__error {
+  font-size: 0.8rem;
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.18);
+  border: 1px solid rgba(248, 113, 113, 0.85);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.6rem;
+}
+
+.cameras__empty {
+  border-radius: var(--radius-lg);
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.22), transparent 55%),
+    rgba(15, 23, 42, 0.96);
+  padding: 0.9rem 0.9rem 1rem;
+}
+
+.cameras__empty h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.cameras__empty p {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-soft);
+}
+
+.cameras__admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.9);
+  background: rgba(15, 23, 42, 0.96);
+  color: #e0f2fe;
+  font-size: 0.78rem;
+}
+
+.cameras__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.cameras__card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.95);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.cameras__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.98);
+  border-color: rgba(56, 189, 248, 0.85);
+}
+
+.cameras__preview {
+  position: relative;
+  padding-top: 60%;
+  background: #000;
+}
+
+.cameras__preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cameras__preview-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.96)),
+    radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.4), transparent 45%);
+}
+
+.cameras__preview-meta {
+  position: absolute;
+  inset-inline: 0.8rem;
+  bottom: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cameras__preview-title {
+  font-size: 0.9rem;
+  color: #f9fafb;
+}
+
+.cameras__preview-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-soft);
+}
+
+.cameras__modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(0, 0, 0, 0.96));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.cameras__modal {
+  max-width: 1100px;
+  width: 90vw;
+  max-height: 82vh;
+  padding: 0.9rem 0.95rem 1rem;
+}
+
+.cameras__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.cameras__modal-header h2 {
+  margin: 0 0 0.15rem;
+  font-size: 0.98rem;
+}
+
+.cameras__modal-header p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-text-soft);
+}
+
+.cameras__modal-close {
+  border-radius: 999px;
+  border: 1px solid rgba(248, 113, 113, 0.9);
+  background: rgba(127, 29, 29, 0.96);
+  color: #fee2e2;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+}
+
+.cameras__modal-body {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+}
+
+.cameras__modal-body img {
+  width: 100%;
+  max-height: 64vh;
+  object-fit: cover;
+}
+
+@media (max-width: 1200px) {
+  .cameras__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .cameras__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+

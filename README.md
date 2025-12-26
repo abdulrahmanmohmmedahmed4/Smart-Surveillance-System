@@ -1,123 +1,74 @@
-إليك نفس النص **منسّقًا ومنظّمًا بشكل احترافي** وواضح بدون تغيير المحتوى، فقط تحسين العرض والترتيب:
+# 🛡️ Smart Surveillance System
 
----
-
-# 🛡️ نظام المراقبة الذكي
-
-**نظام مراقبة متكامل يستخدم الذكاء الاصطناعي للكشف عن الأشخاص المطلوبين عبر تحليل الفيديو المباشر والمسجّل.**
+**نظام مراقبة متكامل بـ React + Django مع إدارة المستخدمين وواجهة تفاعلية حديثة.**
 
 ---
 
 ## 📋 المميزات
 
-* **كشف وتتبع الأشخاص** باستخدام YOLOv8
-* **التعرف على الوجوه** باستخدام InsightFace
-* **إدارة قاعدة بيانات المطلوبين**
-* **لوحة تحكم تفاعلية** باستخدام Streamlit
-* **واجهة برمجة متكاملة** باستخدام Django
-* **إشعارات فورية** عند اكتشاف الأشخاص المطلوبين
+- ✅ نظام تسجيل دخول كامل (Login/Register/Password Reset)
+- ✅ Django REST API مع JWT Authentication  
+- ✅ React + Vite Frontend حديث وسريع
+- ✅ SQLite Database (بدون تعقيد PostgreSQL)
+- ✅ Django Admin Panel جاهز للإدارة
+- ✅ Docker Support (اختياري)
 
 ---
 
 ## 🏗️ هيكل المشروع
 
-```
-SMART_SURVEILLANCE_SYSTEM/
-│
-├── backend/                 # Django Backend
-│   ├── config/              # إعدادات Django
-│   ├── apps/                # التطبيقات (Users, Auth, Cameras, Monitoring...)
-│   ├── media/               # وسائط النظام
-│   ├── static/              # ملفات ثابتة
-│   ├── requirements.txt
-│   ├── Dockerfile
-│   └── README_BACKEND.md
-│
-├── frontend/                # React + TypeScript Frontend
-│   ├── public/
-│   ├── src/
-│   │   ├── pages/           # الصفحات (Login, Dashboard, Monitoring…)
-│   │   ├── components/
-│   │   ├── hooks/
-│   │   ├── services/
-│   │   ├── store/
-│   │   └── utils/
-│   ├── Dockerfile
-│   └── README_FRONTEND.md
-│
-├── ai_processing/           # فريق الذكاء الاصطناعي
-│   ├── models/              # النماذج المدربة (YOLOv8, InsightFace…)
-│   ├── services/            # معالجة الفيديو
-│   ├── api/                 # FastAPI endpoints
-│   ├── utils/
-│   ├── Dockerfile
-│   └── README_AI.md
-│
-├── shared/                  # ملفات مشتركة
-│   ├── types/
-│   ├── schemas/
-│   └── scripts/
-│
-├── deployment/              # DevOps
-│   ├── docker/
-│   ├── kubernetes/
-│   └── terraform/
-│
-├── docs/                    # التوثيق الكامل
-│
+Smart-Surveillance-System/
+├── backend/ # Django Backend ✅ جاهز
+│ ├── auth_app/ # CustomUser + JWT
+│ ├── manage.py
+│ └── db.sqlite3
+├── frontend/ # React + Vite Frontend ✅ جاهز
+│ ├── src/
+│ ├── package.json
+│ └── vite.config.js
 ├── docker-compose.yml
-├── Makefile
 └── README.md
-```
-
 ---
 
 ## 🚀 البدء السريع
 
 ### المتطلبات
+- Python 3.11+
+- Node.js 20+  
+- Git
 
-* Docker
-* Docker Compose
-* Git
+### **Backend (Terminal 1)**
+cd backend
+source venv/bin/activate || python -m venv venv && source venv/bin/activate
+pip install Django djangorestframework djangorestframework-simplejwt pillow
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver 0.0.0.0:8000
+### **Frontend (Terminal 2)**
+cd frontend
+npm install
+echo "VITE_API_BASE_URL=http://localhost:8000/api" > .env
+npm run dev
+### URLs الجاهزة
 
-### خطوات التشغيل
+| الخدمة | الرابط |
+|--------|---------|
+| Frontend | http://localhost:5173/ |
+| Backend API | http://localhost:8000/api/ |
+| Django Admin | http://localhost:8000/admin/ |
 
-#### 1️⃣ نسخ المشروع:
-
-```bash
-git clone https://github.com/Anas-galal-1985/smart-surveillance-system.git
-cd smart-surveillance-system
-```
-
-#### 2️⃣ تشغيل جميع الخدمات:
-
-```bash
-make up
-```
-
-#### 3️⃣ فتح المتصفح:
-
-* **لوحة التحكم (Streamlit):**
-  [http://localhost:8501](http://localhost:8501)
-
-* **واجهة APIs (Django):**
-  [http://localhost:8000](http://localhost:8000)
+**Login:** `abdulrahman` / `[كلمة السر]`
 
 ---
 
-## 👥 فريق التطوير
+## 🐳 Docker (اختياري)
+docker compose up --build -d 
+---
 
-* **الشخص ج:** Django Backend
-* **الشخص د:**   (صفحات 1-5)
-* **الشخص هـ:**  (صفحات 6-13)
-* **فريق الذكاء الاصطناعي:** معالجة الفيديو والنماذج
+## 👤 المطور
+**abdulrahmanmohmmedahmed4** - Full-stack Developer
 
 ---
 
 ## 📄 الرخصة
-
-المشروع مرخّص تحت رخصة **MIT**.
-
----
-
-
+رخصة **MIT**.
