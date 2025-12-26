@@ -18,17 +18,24 @@
 ## 🏗️ هيكل المشروع
 
 Smart-Surveillance-System/
-├── backend/ # Django Backend ✅ جاهز
+├── backend/ # Django Backend ✅
 │ ├── auth_app/ # CustomUser + JWT
+│ ├── camera_app/ # إدارة الكاميرات
+│ ├── config/ # إعدادات Django
 │ ├── manage.py
-│ └── db.sqlite3
-├── frontend/ # React + Vite Frontend ✅ جاهز
+│ └── db.sqlite3 # قاعدة بيانات SQLite
+│
+├── frontend/ # React + Vite ✅
 │ ├── src/
+│ │ ├── pages/
+│ │ ├── components/
+│ │ └── services/
 │ ├── package.json
-│ └── vite.config.js
+│ └── vite.config.ts
+│
+├── ai_processing/ # للعمل المستقبلي (AI)
 ├── docker-compose.yml
 └── README.md
----
 
 ## 🚀 البدء السريع
 
